@@ -11,20 +11,44 @@ $(document).ready(function() {
     messagingSenderId: "271189265430"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
   
-  var Name;
-  var Role;
-  var startDate; 
-  var Worked;
-  var Rate = 0;
-  var Billed = 0;
+  $('button').on('click', function() {
+
+  var name = $('#name').val().trim();
+  var role = $('#role').val().trim();
+  var startDate = $('#startDate').val().trim();
+  var worked = 0;
+  var rate = $('#rate').val().trim();
+  var billed = 0;
   
+  console.log(name);
+  console.log(role);
+  console.log(startDate);
+  console.log(rate);
+
+  var tBody = $('tbody');
+  var tRow = $('<tr>');
+
+  var nameTd = $('<td>').text(name);
+  var roleTd = $('<td>').text(role);
+  var startTd = $('<td>').text(startDate);
+  var rateTd = $('<td>').text(rate);
+
+  tRow.append(nameTd, roleTd, startTd, rateTd);
+  tBody.append(tRow);
+
   database.ref().push({
-    name: Name,
-    role: Role,
+    name: name,
+    role: role,
     startDate: startDate,
-    rate: Rate
+    rate: rate,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
+
   });
+
+  }); 
+
+  
 
 });
