@@ -24,15 +24,32 @@
 
   <!-- Page grid -->
       <div class="row">
-          <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12 employee-board">
-            <tBody></tBody>
+          <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="panel panel-default">
+                  <div class="panel-heading">Current Employees</div>
+                    <div class="panel-body">
+                      <table class="table">
+                        <thead>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Start Date</th>
+                        <th>Months Worked</th>
+                        <th>Monthly Rate</th>
+                        <th>Total Billed</th>
+                        </thead>
+                
+                        <tbody class = "employee-board"></tbody>
+                        
+                      </table>
+                    </div>
+                  </div>         
           </div>
 
         
       </div>
       
       <div class="panel panel-default">
-        <div class="panel-heading">Add Emplyee</div>
+        <div class="panel-heading">Add Employee</div>
         <div class="panel-body">
           <div class="form-group">
             <label for="name">Employee Name</label>

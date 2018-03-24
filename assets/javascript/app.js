@@ -27,13 +27,15 @@ $(document).ready(function() {
   console.log(startDate);
   console.log(rate);
 
-  var tBody = $('tbody');
+  var tBody = $('.employee-board');
   var tRow = $('<tr>');
 
   var nameTd = $('<td>').text(name);
   var roleTd = $('<td>').text(role);
   var startTd = $('<td>').text(startDate);
   var rateTd = $('<td>').text(rate);
+
+  console.log(nameTd);
 
   tRow.append(nameTd, roleTd, startTd, rateTd);
   tBody.append(tRow);
