@@ -47,8 +47,10 @@ $(document).ready(function() {
     rate: rate,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
 
+    
   });
-
+  
+  console.log(Date()); 
   }); 
 
   
