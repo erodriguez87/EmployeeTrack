@@ -46,6 +46,29 @@ $(document).ready(function() {
     startDate: startDate,
     rate: rate,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
+    
+  
+  dataRef.ref().orderByChild('dateAdded').limitToLast(1).on("child_added", function(snapshot){ });
+
+  database.ref().on('value'), function(snapshot){
+      console.log(snapshot.val());
+      console.log(snapshot.val().name);
+      console.log(snapshot.val().role);
+      console.log(snapshot.val().startDate);
+      console.log(snapshot.val().rate);
+
+      // // Change the HTML to reflect
+      $("#name").text(snapshot.val().name);
+      $("#role").text(snapshot.val().role);
+      $("#startDate").text(snapshot.val().startDate);
+      $("#rate").text(snapshot.val().rate);
+
+      // Handle the errors
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+
+//TODO: Math for dates and rates
+//TODO: Display data directly from firebase
 
     
   });
